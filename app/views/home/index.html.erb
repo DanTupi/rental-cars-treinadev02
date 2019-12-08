@@ -1,5 +1,6 @@
 <h1>Rental Cars</h1>
 <h3> Bem vindo ao sistema de gestão de locação </h3>
+#before_action :authenticate_user!
 
 <%= link_to 'Fabricantes', manufacturers_path %> <br>
 <%= link_to 'Filiais', subsidiaries_path %> <br>
