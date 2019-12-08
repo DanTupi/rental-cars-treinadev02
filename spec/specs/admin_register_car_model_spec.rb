@@ -2,9 +2,9 @@ require 'rails_helper'
 
 feature 'Admin register car model' do
   scenario 'successfully' do
-    #user = User.create!(email: 'teste@test.com', password: '123456')
+    user = User.create!(email: 'teste@test.com', password: '123456')
 
-    #login_as(user, scope: :user)
+    login_as(user, scope: :user)
     Manufacturer.create!(name: 'GM')
     Manufacturer.create!(name: 'Honda')
     CarCategory.create!(name: 'A', daily_rate: 90, car_insurance: 50,
@@ -32,15 +32,17 @@ feature 'Admin register car model' do
     expect(page).to have_content('Categoria: A')
   end
 
-  #scenario 'and do not register but wants to go back to car models page' do
-  #  user = User.create!(email: 'test@test.com', password: '123456')
+  scenario 'and do not register but wants to go back to car models page' do
+    user = User.create!(email: 'test@test.com', password: '123456')
 
-  #  login_as(user, scope: :user)
-  #  visit root_path
-  #  click_on 'Modelos de Carros'
-  #  click_on 'Clique aqui'
-  #  click_on 'Voltar'
+    login_as(user, scope: :user)
+    visit root_path
+    click_on 'Modelos de Carros'
+    click_on 'Clique aqui'
+    click_on 'Voltar'
 
-  #  expect(current_path).to eq car_models_path
-  #end
+    expect(current_path).to eq car_models_path
+  end
+
+
 end
