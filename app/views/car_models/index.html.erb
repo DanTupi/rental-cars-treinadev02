@@ -1,0 +1,33 @@
+<h1>Modelos de Carros</h1>
+
+<% if @car_models.any? %>
+
+  <table>
+    <caption>Modelos</caption>
+    <tr>
+      <th>Modelo</th>
+      <th>Ano</th>
+      <th>Motor</th>
+      <th>Combustivel</th>
+      <th>Categoria</th>
+      <th>Fabricante</th>
+    </tr>
+    <% @car_models.each do |model| %>
+      <tr>
+        <td><%= link_to model.name, model %></td>
+        <td> <%= model.year %></td>
+        <td> <%= model.motorization %></td>
+        <td> <%= model.fuel_type %></td>
+        <td> <%= model.car_category.name %></td>
+        <td> <%= model.manufacturer.name %></td>
+        <td><%# link_to 'Excluir', model, method: :delete, data: {message: 'Tem certeza?'}%></td>
+      </tr>
+    <% end %>
+  </table>
+  <%= link_to 'Registrar novo modelo', new_car_model_path%>
+<% else %>
+  <h3>Não há modelos cadastrados no sistema. <%= link_to 'Clique aqui', new_car_model_path %> para cadastrar um novo modelo</h3>
+<% end %>
+<br>
+<br>
+<%= link_to 'Voltar', root_path %>

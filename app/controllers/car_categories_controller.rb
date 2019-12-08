@@ -2,7 +2,7 @@ class CarCategoriesController < ApplicationController
   #before_action :authenticate_user!
   #before_action :authorize_admin,
   #before_action :set_car_category, only: [:show, :edit, :update]
-  
+
   def index
     @car_categories = CarCategory.all
   end
@@ -19,6 +19,7 @@ class CarCategoriesController < ApplicationController
     @car_category = CarCategory.new(car_categories_params)
     if @car_category.save
       redirect_to @car_category
+      flash[:notice] = 'Categoria registrada com sucessso'
     else
       render :new
     end
