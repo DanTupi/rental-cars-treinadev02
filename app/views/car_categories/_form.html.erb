@@ -1,0 +1,18 @@
+<% if car_category.errors.any? %>
+  <p>Voce deve corrigir os seguintes erros:</p>
+  <%= car_category.errors.full_message do |message| %>
+    <li><%= message %></li>
+    <% end %>
+<% end %>
+
+<%= form_with model: car_category do |f| %>
+  <%= f.label :name, 'Nome da categoria' %>
+  <%= f.text_field :name %>
+  <%= f.label :daily_rate, 'Valor da diária' %>
+  <%= f.number_field :daily_rate %>
+  <%= f.label :car_insurance, 'Valor do seguro' %>
+  <%= f.number_field :car_insurance %>
+  <%= f.label :third_party_insurance, 'Seguro contra terceiros' %>
+  <%= f.number_field :third_party_insurance %>
+  <%= f.submit 'Enviar' %>
+<% end %>

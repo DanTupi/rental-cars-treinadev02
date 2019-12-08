@@ -1,0 +1,4 @@
+<h1> <%= "Editar categoria #{@car_category.name}" %></h1>
+
+<%= render partial: 'form', locals: {car_category: @car_category} %>
+<%= link_to "Voltar", car_category_path(@car_category) %>

@@ -1,0 +1,5 @@
+<h1>Atualizar <%= @subsidiary.name %></h1>
+
+<%= render partial: 'form', locals: {subsidiary: @subsidiary}%>
+
+<div><%= link_to 'Voltar', subsidiary_path(@subsidiary) %></div>

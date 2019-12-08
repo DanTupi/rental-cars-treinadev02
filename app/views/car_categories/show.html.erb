@@ -1,0 +1,24 @@
+<h1>Categoria <%= @car_category.name %></h1>
+
+<ul>
+  <li>Preco diario: R$ <%= @car_category.daily_rate %></li>
+  <li>Seguro: R$ <%= @car_category.car_insurance %></li>
+  <li>Seguro de terceiros: R$ <%= @car_category.third_party_insurance %></li>
+</ul>
+<h4>Total : R$ <%= @car_category.daily_rate + @car_category.car_insurance + @car_category.third_party_insurance %></h4>
+
+<table>
+  <caption>Categoria <%= @car_category.name %> - Modelo de carros</caption>
+  <tr>
+    <th>Modelo</th>
+    <th>Ano</th>
+    <th>Combustivel</th>
+    <th>Motor</th>
+  </tr>
+  
+</table>
+<br>
+
+<div><%= link_to 'Editar Categoria', edit_car_category_path(@car_category) %></div>
+
+<div><%= link_to 'Voltar', car_categories_path %></div>

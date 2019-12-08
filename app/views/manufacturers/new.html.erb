@@ -1,0 +1,13 @@
+<h1>Cadastrar novo fabricante</h1>
+
+<% if @manufacturer.errors.any? %>
+  <ul>
+  <% @manufacturer.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<%= render partial: 'form', locals: {manufacturer: @manufacturer}%>
+
+<div><%= link_to 'Voltar', manufacturers_path %></div>

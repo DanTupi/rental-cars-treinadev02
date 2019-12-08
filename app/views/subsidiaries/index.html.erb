@@ -1,0 +1,16 @@
+<h1>Filiais</h1>
+<% if @subsidiaries.empty? %>
+  <h3>Não existem filiais cadastradas no sistema. <%= link_to 'Clique aqui', new_subsidiary_path %> para cadastrar uma nova filial.</h3>
+<% end %>
+
+<% if @subsidiaries.any? %>
+  <%=link_to 'Cadastrar nova filial', new_subsidiary_path %>
+<% end %>
+
+<ul>
+  <% @subsidiaries.each do |subsidiary| %>
+  <li><%= link_to subsidiary.name, subsidiary_path(subsidiary) %></li>
+  <% end %>
+</ul>
+
+<div><%= link_to 'Voltar', root_path %></div>
