@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Admin register car car_category' do
   scenario 'successfully without any car car_category registered' do
     visit root_path
-    click_on 'Categoria de Carros'
+    click_on 'Categorias de Carros'
     click_on 'Clique aqui'
 
     fill_in 'Nome da categoria', with: 'Sedan'
@@ -23,7 +23,7 @@ feature 'Admin register car car_category' do
     CarCategory.create!(name: 'Hatch', daily_rate: 90, car_insurance: 50, third_party_insurance: 20)
 
     visit root_path
-    click_on 'Categoria de Carros'
+    click_on 'Categorias de Carros'
     click_on 'Cadastrar nova categoria'
 
     fill_in 'Nome da categoria', with: 'Hatch'
@@ -41,7 +41,7 @@ feature 'Admin register car car_category' do
 
   scenario 'and do not create but return to car car_categories page' do
     visit root_path
-    click_on 'Categoria de Carros'
+    click_on 'Categorias de Carros'
     click_on 'Clique aqui'
     click_on 'Voltar'
 

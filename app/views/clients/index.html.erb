@@ -1,0 +1,23 @@
+<h1>Lista de usuários</h1>
+
+<% if @clients.any? %>
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Email</th>
+    <th>CPF</th>
+  </tr>
+  <% @clients.each do |client| %>
+    <tr>
+      <td><%= client.name %></td>
+      <td><%= client.email %></td>
+      <td><%= client.document %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'Registrar novo cliente', new_client_path %>
+<% else %>
+  <h3>Não existem usuários cadastrados. <%= link_to 'Clique aqui', new_client_path %> para registrar um novo cliente.</h3>
+<% end %>
+<br>
+<%= link_to 'Voltar', root_path %>

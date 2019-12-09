@@ -2,8 +2,8 @@
 
 <ul>
   <li>Preco diario: R$ <%= @car_category.daily_rate %></li>
-  <li>Seguro: R$ <%= @car_category.car_insurance %></li>
-  <li>Seguro de terceiros: R$ <%= @car_category.third_party_insurance %></li>
+  <li>Valor do Seguro: R$ <%= @car_category.car_insurance %></li>
+  <li>Seguro contra terceiros: R$ <%= @car_category.third_party_insurance %></li>
 </ul>
 <h4>Total : R$ <%= @car_category.daily_rate + @car_category.car_insurance + @car_category.third_party_insurance %></h4>
 
@@ -15,7 +15,7 @@
     <th>Combustivel</th>
     <th>Motor</th>
   </tr>
-  
+
 </table>
 <br>
 

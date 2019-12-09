@@ -1,0 +1,25 @@
+<%= form_with model: car, local: true do |f| %>
+  <p>
+    <%= f.label :license_plate, 'Placa' %>
+    <%= f.text_field :license_plate %>
+  </p>
+  <p>
+    <%= f.label :color, 'Cor' %>
+    <%= f.text_field :color %>
+  </p>
+  <p>
+    <%= f.label :mileage, 'Quilometragem' %>
+    <%= f.text_field :mileage %>
+  </p>
+  <p>
+    <%= f.label :subsidiary_id, 'Filial' %>
+    <%= f.collection_select(:subsidiary_id, @subsidiaries, :id, :name) %>
+  </p>
+  <p>
+    <%= f.label :car_model_id, 'Modelo' %>
+    <%= f.collection_select(:car_model_id, @car_models, :id, :name) %>
+  </p>
+  <div>
+    <%= f.submit 'Enviar' %>
+  </div>
+<% end %>

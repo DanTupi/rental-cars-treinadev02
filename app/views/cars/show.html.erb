@@ -1,0 +1,22 @@
+<h1>Frota de veiculos da filial <%= @car.subsidiary.name %></h1>
+
+<table>
+  <tr>
+    <th>Modelo</th>
+    <th>Cor</th>
+    <th>Placa</th>
+    <th>Quilometragem</th>
+  </tr>
+  <% @cars.each do |car| %>
+    <% if car.subsidiary.name == @car.subsidiary.name %>
+  <tr>
+    <td><%= car.car_model.name %> <%= car.car_model.motorization %> <%= car.car_model.fuel_type %> - <%= car.car_model.year %></td>
+    <td><%= car.color %></td>
+    <td><%= car.license_plate %></td>
+    <td><%= car.mileage %></td>
+  </tr>
+    <% end %>
+  <% end %>
+</table>
+
+<%=link_to 'Voltar', cars_path %>

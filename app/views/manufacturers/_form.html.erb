@@ -1,6 +1,6 @@
 <% if manufacturer.errors.any? %>
 <p>Você deve corrigir os seguintes erros:</p>
-  <% manufacturer.errors.full_messages.each do |message| %>
+  <% @manufacturer.errors.full_messages.each do |message| %>
     <li> <%= message %> </li>
   <% end %>
 <% end %>

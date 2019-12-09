@@ -1,10 +1,9 @@
 <h1><%= @subsidiary.name %></h1>
 
-<h3>Endereço</h3>
-<p><%= @subsidiary.address %></p>
+<ul>
+  <li> Endereço: <%= @subsidiary.address %></li>
+  <li>CNPJ: <%= @subsidiary.cnpj %></li>
 
-<h3>CNPJ</h3>
-<p><%= @subsidiary.cnpj %></p>
 
 <div>
   <%= link_to 'Editar', edit_subsidiary_path(@subsidiary) %>

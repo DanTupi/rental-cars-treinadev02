@@ -1,0 +1,29 @@
+<h1>Frota</h1>
+
+<% if @cars.any? %>
+  <%= link_to 'Registrar novo veiculo', new_car_path %>
+  <br>
+  <br>
+  <table>
+    <tr>
+      <th>Modelo</th>
+      <th>Cor</th>
+      <th>Placa</th>
+      <th>Quilometragem</th>
+    </tr>
+    <% @cars.each do |car| %>
+      <tr>
+        <td><%= car.car_model.name %> <%= car.car_model.motorization %> <%= car.car_model.fuel_type %> - <%= car.car_model.year %></td>
+        <td><%= car.color %></td>
+        <td><%= car.license_plate %></td>
+        <td><%= car.mileage %></td>
+    </tr>
+    <% end %>
+  </table>
+
+<% else %>
+  <h3>Não existem frotas de veículos cadastradas. <%= link_to 'Clique aqui', new_car_path %> para cadastrar um novo veículo para a frota</h3>
+<% end %>
+<br>
+
+<%= link_to 'Voltar', root_path %>

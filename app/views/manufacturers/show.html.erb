@@ -1,8 +1,15 @@
 <h1> <%= @manufacturer.name  %></h1>
-<br>
+<% if @manufacturer.car_models.any? %>
+<table>
+  <caption><%= @manufacturer.name %> - modelo de carros</caption>
+<tr>
+  <th>Modelo</th>
+  <th>Ano</th>
+  <th>Combustivel</th>
+  <th>Motor</th>
+</tr>
+  <% end %>
 
-<br>
-
-
+<div><%= link_to 'Editar', edit_manufacturer_path(@manufacturer)%></div>
 
 <div><%= link_to 'Voltar', root_path%></div>

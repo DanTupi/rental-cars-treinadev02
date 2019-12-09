@@ -21,6 +21,7 @@ class ManufacturersController < ApplicationController
       flash[:alert] = "#{@manufacturer.name} cadastrado com sucesso"
       redirect_to @manufacturer
     else
+      flash.now[:alert] = 'Você deve preencher todos os campos'
       render :new
     end
   end
