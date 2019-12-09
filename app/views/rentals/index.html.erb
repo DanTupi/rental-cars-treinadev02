@@ -1,0 +1,7 @@
+<%= link_to 'Agendar locações', new_rental_path %><br>
+
+<%= form_with  url: search_rentals_path, local: true, method: :get do %>
+  <%= label_tag :q, 'Código'%>
+  <%= text_field_tag :q %>
+  <%= submit_tag 'Buscar' %>
+  <% end %>

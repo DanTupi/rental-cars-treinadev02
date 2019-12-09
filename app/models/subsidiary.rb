@@ -3,5 +3,5 @@ class Subsidiary < ApplicationRecord
  validates :cnpj, uniqueness: { message: 'CNPJ já existe!' }
  validates :cnpj, length: { is: 18, message: 'Deve conter 18 caracteres, somando pontos e barra' }
 
- has_many :cars
+ has_many :cars, dependent: :destroy
 end
