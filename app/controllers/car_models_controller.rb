@@ -52,7 +52,7 @@ end
                                       :car_category_id, :year, :manufacturer_id)
   end
 
-  #def authorize_admin
-  #  redirect_to root_path, notice: 'Você não tem autorização para isso!' unless current_user.admin?
-  #end
+  def authorize_admin
+    redirect_to root_path, notice: 'Você não tem autorização para isso!' unless current_user.admin?
+  end
 end

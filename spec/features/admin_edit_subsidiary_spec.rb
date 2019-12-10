@@ -2,9 +2,13 @@ require 'rails_helper'
 
 feature 'Admin edit subsidiary' do
   scenario 'successfully' do
+    user = User.create!(email: 'teste@test.com', password: '123456')
+
+    visit root_path
+    login_as(user, scope: :user)
+
     Subsidiary.create!(name: 'Motos de Sempre', cnpj: '22.333.555/0001-44',
                        address: 'Avenital Tal, 123')
-    visit root_path
     click_on 'Filiais'
     click_on 'Motos de Sempre'
     click_on 'Editar'
@@ -20,10 +24,14 @@ feature 'Admin edit subsidiary' do
   end
 
   scenario 'and must fill in all fields' do
-    Subsidiary.create!(name: 'Vila Mariana', cnpj: '22.333.555/0001-44',
-                       address: 'Avenital Tal, 123')
+    user = User.create!(email: 'teste@test.com', password: '123456')
+
+
 
     visit root_path
+    login_as(user, scope: :user)
+    Subsidiary.create!(name: 'Vila Mariana', cnpj: '22.333.555/0001-44',
+                       address: 'Avenital Tal, 123')
     click_on 'Filiais'
     click_on 'Vila Mariana'
     click_on 'Editar'

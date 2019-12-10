@@ -3,6 +3,7 @@ require 'rails_helper'
 feature 'Admin register car model' do
   scenario 'successfully' do
     user = User.create!(email: 'teste@test.com', password: '123456')
+                       #role: :admin)
 
     login_as(user, scope: :user)
     Manufacturer.create!(name: 'GM')

@@ -18,7 +18,7 @@ class SubsidiariesController < ApplicationController
   def create
     @subsidiary = Subsidiary.new(subsidiary_params)
     if @subsidiary.save
-      flash[:alert] = "#{@manufacturer.name} cadastrado com sucesso"
+      flash[:alert] = "#{@subsidiary.name} cadastrado com sucesso"
       redirect_to @subsidiary
     else
       render :new
