@@ -4,4 +4,8 @@
   <%= label_tag :q, 'Código'%>
   <%= text_field_tag :q %>
   <%= submit_tag 'Buscar' %>
-  <% end %>
+<% end %>
+
+<% if @rentals.present? %>
+  <%= render @rentals %>
+<% end %>

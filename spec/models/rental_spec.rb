@@ -32,7 +32,7 @@ RSpec.describe Rental, type: :model do
 
       rental.valid?
 
-      expect(rental.errors.full_messages).to eq(['Star date deve existir'])
+      expect(rental.errors.full_messages).to include('Star date deve existir')
 
     end
 

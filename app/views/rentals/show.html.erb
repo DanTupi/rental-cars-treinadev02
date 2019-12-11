@@ -6,3 +6,14 @@
 
 <h3> Categoria </h3>
 <p> <%= @rental.car_category.name %> </p>
+
+# TODO fazer este formulario para outra view, uma review, lá no routes vc tem de criar um review
+
+<% if @rental.scheduled? %>
+  <%= form_with model: @rental, url: start_rental_path, method: :post  do |f| %>
+    <%= f.label :car_id, 'Carro' %>
+    <%= f.collection_select :car_id, @cars, :id, :name %>
+    <%= f.submit 'Iniciar Locação' %>
+    <% end %>
+
+<% end %>
