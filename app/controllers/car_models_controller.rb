@@ -1,7 +1,7 @@
 class CarModelsController < ApplicationController
   before_action :authenticate_user!
-  #before_action :authorize_admin,
-  #before_action :set_car_model, only: [:show, :edit, :update]
+  before_action :authorize_admin
+  before_action :set_car_model, only: [:show, :edit, :update]
 
 
   def index
@@ -44,7 +44,6 @@ class CarModelsController < ApplicationController
 
 def set_car_model
   @car_model = CarModel.find(params[:id])
-
 end
 
   def car_model_params

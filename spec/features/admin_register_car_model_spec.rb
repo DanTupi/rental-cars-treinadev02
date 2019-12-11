@@ -2,8 +2,8 @@ require 'rails_helper'
 
 feature 'Admin register car model' do
   scenario 'successfully' do
-    user = User.create!(email: 'teste@test.com', password: '123456')
-                       #role: :admin)
+    user = User.create!(email: 'teste@test.com', password: '123456',
+                       role: :admin)
 
     login_as(user, scope: :user)
     Manufacturer.create!(name: 'GM')
@@ -26,7 +26,7 @@ feature 'Admin register car model' do
 
     click_on 'Enviar'
 
-    #expect(page).to have_content('Modelo registrado com sucesso')
+    expect(page).to have_content('Modelo registrado com sucesso')
     expect(page).to have_css('h1', text: 'Fit')
     expect(page).to have_content('Ano: 2019')
     expect(page).to have_content('Fabricante: Honda')
@@ -34,7 +34,8 @@ feature 'Admin register car model' do
   end
 
   scenario 'and do not register but wants to go back to car models page' do
-    user = User.create!(email: 'test@test.com', password: '123456')
+    user = User.create!(email: 'test@test.com', password: '123456',
+                        role: :admin)
 
     login_as(user, scope: :user)
     visit root_path
