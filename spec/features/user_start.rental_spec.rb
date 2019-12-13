@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'user start rental' do
-  scenario 'successfully' do
+  xscenario 'successfully' do
     subsidiary = Subsidiary.create!(name: 'Almeidinha Cars',
                                     cnpj: '00.000.000/0000-00',
                                     address: 'Alameda Santos, 1293')
@@ -9,7 +9,7 @@ feature 'user start rental' do
                         #role: :employee)
     client = Client.create!(name: 'Fulano Sicrano', email: 'fulano@test.com',
                             document: '743.341.870-99')
-    category = CarCategory.create!(name: 'A', daily_rate: 30,
+    carcategory = CarCategory.create!(name: 'A', daily_rate: 30,
                                    car_insurance: 30, third_party_insurance: 30)
     manufacturer = Manufacturer.create!(name: 'Fiat')
     car_model = CarModel.create!(name: 'Onix', year: 2000,

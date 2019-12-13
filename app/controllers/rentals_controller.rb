@@ -43,8 +43,8 @@ class RentalsController < ApplicationController
     # @rental.update(status: :in_progress) mesma coisa do de cima
     @car = Car.find(params[:rental][:car_id])
     @car.unavailable!
-    @rental.create_car_rental(car: @car, price: @car.price)
-    # ou =  CarRental.create(rental: @rental, cars: @car, price: 9)
+    #@rental.create_car_rental(car: @car, price: @car.price)
+    CarRental.create(rental: @rental, cars: @car, price: 9)
     flash[:notice] = 'Locação iniciada com sucesso'
     redirect_to @rental
   end

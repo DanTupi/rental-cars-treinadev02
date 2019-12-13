@@ -1,5 +1,5 @@
 <h1>Rental Cars</h1>
-<h3> Bem vindo ao sistema de gestão de locação </h3>
+<h3> <%= I18n.translate('welcome_message') </h3>
 #before_action :authenticate_user!
 
 <%= link_to 'Fabricantes', manufacturers_path %> <br>
